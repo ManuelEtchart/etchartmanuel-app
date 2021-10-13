@@ -1,22 +1,30 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
+
+  const header = {backgroundColor: "black",
+                  borderBottom: "3px solid #e71d36",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center"}
+
+  const img = {width: "180px",
+              padding: "10px 0px 5px 10px"}
+                  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header style={header}>
+        <div>
+          <a href="index.html">
+            <img src={logo} style={img} alt="logo" />
+          </a>
+        </div>
+        <div>
+          <NavBar />
+        </div>
+        
       </header>
     </div>
   );
