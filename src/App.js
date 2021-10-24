@@ -1,6 +1,7 @@
 import logo from './logo.png';
 import './App.css';
 import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
 
@@ -23,9 +24,10 @@ function App() {
         </div>
         <div>
           <NavBar />
-        </div>
-        
+        </div>        
       </header>
+      <ItemListContainer greeting="Holaaa" />
+
     </div>
   );
 }

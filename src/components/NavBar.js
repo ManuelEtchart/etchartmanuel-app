@@ -1,3 +1,5 @@
+import CartWidget from "./CartWidget"
+
 function NavBar () {
 
     const li = {listStyle: "none",
@@ -16,7 +18,8 @@ function NavBar () {
 			<li style={li}><a style={a} href="productos.html">Productos</a></li>
 			<li style={li}><a style={a} href="promociones.html">Promos</a></li>
 			<li style={li}><a style={a} href="nosotros.html">Nosotros</a></li>
-			<li style={li}><a style={a} href="contacto.html">Contacto</a></li>			    
+			<li style={li}><a style={a} href="contacto.html">Contacto</a></li>
+			<CartWidget />			    
 		</ul>
     )
 }
