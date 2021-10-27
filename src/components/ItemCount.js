@@ -12,7 +12,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const stlCount = {display: "flex",
-                        backgroundColor: "black",
                         justifyContent: "center"
                     }
 

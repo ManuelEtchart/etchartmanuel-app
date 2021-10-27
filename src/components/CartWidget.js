@@ -1,4 +1,4 @@
-import cartIcon from '../cartIcon.png';
+import cartIcon from '../assets/cartIcon.png';
 
 const imgCart = {height: "60px", width: "60px"}
 
