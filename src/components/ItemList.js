@@ -1,11 +1,10 @@
 import Item from "./Item"
+import "./componentsCSS/ItemList-ItemDetailContainer.css"
 
 const ItemList = ({items}) => {
-    
-    const stlItemList = {display:"flex"}
 
     return(
-            <div style={stlItemList}>
+            <div className="stlItemList">
                 {items.map(item => <Item key={item.id} item={item}/>)}
             </div>
     )

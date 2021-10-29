@@ -2,6 +2,7 @@ import logo from './assets/logo.png';
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
                   flexDirection: "row",
                   alignItems: "center"}
 
-  const img = {width: "180px",
+  const stlImgLogo = {width: "180px",
               padding: "10px 0px 5px 10px"}
                   
   return (
@@ -19,14 +20,16 @@ function App() {
       <header style={header}>
         <div>
           <a href="index.html">
-            <img src={logo} style={img} alt="logo" />
+            <img src={logo} style={stlImgLogo} alt="logo" />
           </a>
         </div>
         <div>
           <NavBar />
         </div>        
       </header>
-      <ItemListContainer greeting="Holaaa" />
+      <ItemListContainer greeting="Bienvenidos!!" />
+      <ItemDetailContainer />
+
 
     </div>
   );

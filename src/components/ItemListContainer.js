@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import ItemList from "./ItemList"
 
-const itemsArray = [
-                    {id: 1, title: "Pizza Muzzarela", stock: 5, pictureURL: "src/assets/pizzaMuzza.jpg"},
-                    {id: 2, title: "Pizza Napolitana", stock: 0, pictureURL: "src/assets/pizzaNapo.jpg"}
+export const itemsArray = [
+                    {id: "1", title: "Pizza Muzzarela", price: 480, stock: 5, pictureURL: "images/pizzaMuzza.jpg", description:"Pizza con salsa de tomate, queso Muzzarela, orégano y aceitunas."},
+                    {id: "2", title: "Pizza Napolitana", price: 580, stock: 0, pictureURL: "images/pizzaNapo.jpg", description:"Pizza con salsa de tomate, queso Muzzarela, rodajas de tomate, ajo, orégano y aceitunas."}
                 ]
 
 const getItemsArray = new Promise((res,rej) => {
