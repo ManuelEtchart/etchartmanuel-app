@@ -13,7 +13,7 @@ const getItemsArray = new Promise((res,rej) => {
         }, 2000)
     })
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const [cargando, setCargando] = useState(true)
 
@@ -32,7 +32,6 @@ const ItemListContainer = ({greeting}) => {
 
     return(
             <div>
-                <h1>{greeting}</h1>
                 <h1 style={stlCargando}>Cargando...</h1>
                 <ItemList items={items}/>
             </div>

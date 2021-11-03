@@ -1,0 +1,26 @@
+.header{
+    background-color: black;
+    border-bottom: 3px solid #e71d36;
+    display: flex;
+    flex-direction: row;
+    align-items: "center";
+}
+
+.stlImgLogo{
+    width: 180px;
+    padding: 10px 0px 5px 10px;
+}
+
+.li{
+    list-style: none;
+    display: inline-block;
+}
+
+.a{
+    font-family: 'Arial', 'Helvetica';
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #e71d36;
+    margin-right: 100px;
+}
