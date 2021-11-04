@@ -1,14 +1,24 @@
 .stlItemDiv, .stlDetailDiv{
     padding: 0px 10px 5px 10px;
     background-color: black;
-    margin: 0px 10px 5px 10px;
+    margin: 0px 10px 10px 10px;
     color: #e71d36;
     font-size: 1.5rem;
     border-radius: 7px;
 }
 
 .stlDetailDiv{
+    height: 450px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.stlDetailDescp{
     width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .stlImgItem{
@@ -31,5 +41,5 @@
 }
 
 .stlPrice{
-    font-size: 1.5rem;
+    font-size: 2rem;
 }

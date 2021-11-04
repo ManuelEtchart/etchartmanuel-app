@@ -1,24 +1,22 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png';
+import CartWidget from './CartWidget';
 import './componentsCSS/Header-NavBar.css';
 import NavBar from './NavBar';
 
 const Header = () => {
 
-     
-
-    return(
+  return(
         <header className="header">
-          <div>
-            <a href="index.html">
-              <img src={logo} className="stlImgLogo" alt="logo" />
-            </a>
-          </div>
-          <div>
+            <div>
+              <Link to="/">
+                <img src={logo} className="stlImgLogo" alt="logo" />
+              </Link>
+            </div>
             <NavBar />
-          </div>        
-      </header>
-    )
-    
+            <CartWidget />       
+        </header>
+        )
 }
 
 export default Header
