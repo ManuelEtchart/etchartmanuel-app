@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
 import ItemCount from "./ItemCount"
 import "./componentsCSS/Item-ItemDetail.css"
 import muzzarela from '../assets/pizzaMuzza.jpg'
@@ -8,9 +9,11 @@ import empJyq from '../assets/empanadaJyq.jpg'
 
 
 const ItemDetail = ({item}) => {
+    const [cantSeleccionada, setCantSeleccionada] = useState(0)
 
-    const onAdd = (cantidad) => {
-        alert(`Ha comprado ${cantidad} ${item.categoria}/s`)
+    const onAdd = (cantSelec) => {
+        setCantSeleccionada(cantSelec)
+        alert(`Ha comprado ${cantSelec} ${item.categoria}/s`)
     }
 
     const decidirSrc = () => {

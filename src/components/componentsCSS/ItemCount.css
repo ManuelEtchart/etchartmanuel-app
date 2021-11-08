@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-.stlButtonCount{
+.stlButtonCount, .stlButtonCountGoCart{
     background-color: #e71d36;
     border-radius: 100px;
     font-size: 18px;
@@ -11,6 +11,10 @@
     cursor: pointer;
     padding: 0px 10px;
     
+}
+
+.stlButtonCountGoCart{
+    background-color: orangered;
 }
 
 .stlStock{
