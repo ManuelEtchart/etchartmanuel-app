@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"
 
 export const itemsArray = [
-                    {id: "P1", title: "Pizza Muzzarela", price: 480, stock: 5, pictureURL: "muzzarela", categoria: "pizza", description:"Pizza con salsa de tomate, queso Muzzarela, orégano y aceitunas."},
-                    {id: "P2", title: "Pizza Napolitana", price: 580, stock: 0, pictureURL: "napolitana", categoria: "pizza", description:"Pizza con salsa de tomate, queso Muzzarela, rodajas de tomate, ajo, orégano y aceitunas."},
-                    {id: "E1", title: "Empanada Carne", price: 60, stock: 6, pictureURL: "empCarne", categoria: "empanada", description: "Empanadas con relleno de carne picada."},
-                    {id: "E2", title: "Empanada Jamón y Queso", price: 60, stock: 12, pictureURL: "empJyq", categoria: "empanada", description: "Empanadas con relleno de queso Muzzarela y jamón cocido."}
+                    {id: "P1", title: "Pizza Muzzarela", price: 480, stock: 5, pictureURL: "assets/images/pizzaMuzza.jpg", categoria: "pizza", description:"Pizza con salsa de tomate, queso Muzzarela, orégano y aceitunas."},
+                    {id: "P2", title: "Pizza Napolitana", price: 580, stock: 0, pictureURL: "assets/images/pizzaNapo.jpg", categoria: "pizza", description:"Pizza con salsa de tomate, queso Muzzarela, rodajas de tomate, ajo, orégano y aceitunas."},
+                    {id: "E1", title: "Empanada Carne", price: 60, stock: 6, pictureURL: "assets/images/empanadaCarne.jpg", categoria: "empanada", description: "Empanadas con relleno de carne picada."},
+                    {id: "E2", title: "Empanada Jamón y Queso", price: 60, stock: 12, pictureURL: "assets/images/empanadaJyq.jpg", categoria: "empanada", description: "Empanadas con relleno de queso Muzzarela y jamón cocido."}
                 ]
 
 const getItemsArray = new Promise((res,rej) => {

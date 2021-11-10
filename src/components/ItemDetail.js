@@ -2,42 +2,27 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import ItemCount from "./ItemCount"
 import "./componentsCSS/Item-ItemDetail.css"
-import muzzarela from '../assets/pizzaMuzza.jpg'
-import napolitana from '../assets/pizzaNapo.jpg'
-import empCarne from '../assets/empanadaCarne.jpg'
-import empJyq from '../assets/empanadaJyq.jpg'
-
 
 const ItemDetail = ({item}) => {
     const [cantSeleccionada, setCantSeleccionada] = useState(0)
+    const [goCart, setGoCart] = useState("no")
 
     const onAdd = (cantSelec) => {
         setCantSeleccionada(cantSelec)
         alert(`Ha comprado ${cantSelec} ${item.categoria}/s`)
-    }
-
-    const decidirSrc = () => {
-        if(item.pictureURL === "muzzarela"){
-            return muzzarela
-        }else if(item.pictureURL === "napolitana"){
-            return napolitana
-        }else if(item.pictureURL === "empCarne"){
-            return empCarne
-        }else if(item.pictureURL === "empJyq"){
-            return empJyq
-        }
+        setGoCart("yes")
     }
 
     return(
         <div className="stlDetailDiv">
             <div>
                 <p>{item.title}</p>
-                <img src={decidirSrc()} className="stlImgDetail" alt={item.title}/>
+                <img src={item.pictureURL} className="stlImgDetail" alt={item.title}/>
             </div>
             <div className="stlDetailDescp">
                 <p className="stlPrice">${item.price}</p>
                 <p>{item.description}</p>
-                <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+                {goCart === "no" ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd} /> : <Link to="/cart"><button className="stlButtonCountGoCart">Ir al Carrito</button></Link>}
                 <Link to="/"><button className="stlButton">Volver</button></Link>
             </div>
         </div>
