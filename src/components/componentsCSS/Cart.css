@@ -1,0 +1,9 @@
+.stlButton{
+    background-color: #e71d36;
+    border-radius: 100px;
+    font-size: 18px;
+    border: solid black 1px;
+    cursor: pointer;
+    padding: 0px 10px;
+    margin: 5px 0px;
+}

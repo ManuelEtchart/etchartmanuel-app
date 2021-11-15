@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState,useContext } from "react"
 import ItemCount from "./ItemCount"
 import "./componentsCSS/Item-ItemDetail.css"
+import {CartContext} from "../context/CartContext"
 
 const ItemDetail = ({item}) => {
     const [cantSeleccionada, setCantSeleccionada] = useState(0)
     const [goCart, setGoCart] = useState("no")
 
+    const {agregarAlCarrito} = useContext(CartContext)
+
     const onAdd = (cantSelec) => {
         setCantSeleccionada(cantSelec)
-        alert(`Ha comprado ${cantSelec} ${item.categoria}/s`)
+        agregarAlCarrito({id: item.id, title: item.title, cantidad: cantSelec, precio: item.price}, cantSelec)
         setGoCart("yes")
     }
 
@@ -22,7 +25,7 @@ const ItemDetail = ({item}) => {
             <div className="stlDetailDescp">
                 <p className="stlPrice">${item.price}</p>
                 <p>{item.description}</p>
-                {goCart === "no" ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd} /> : <Link to="/cart"><button className="stlButtonCountGoCart">Ir al Carrito</button></Link>}
+                {goCart === "no" ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd} /> : <Link to="/carrito"><button className="stlButtonCountGoCart">Terminar mi compra</button></Link>}
                 <Link to="/"><button className="stlButton">Volver</button></Link>
             </div>
         </div>
