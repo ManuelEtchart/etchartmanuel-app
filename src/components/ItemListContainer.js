@@ -1,20 +1,16 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { getFirebase } from "../services/getFirebase"
 import ItemList from "./ItemList"
 
 export const itemsArray = [
-                    {id: "P1", title: "Pizza Muzzarela", price: 480, stock: 5, pictureURL: "assets/images/pizzaMuzza.jpg", categoria: "pizza", description:"Pizza con salsa de tomate, queso Muzzarela, orégano y aceitunas."},
-                    {id: "P2", title: "Pizza Napolitana", price: 580, stock: 0, pictureURL: "assets/images/pizzaNapo.jpg", categoria: "pizza", description:"Pizza con salsa de tomate, queso Muzzarela, rodajas de tomate, ajo, orégano y aceitunas."},
-                    {id: "E1", title: "Empanada Carne", price: 60, stock: 6, pictureURL: "assets/images/empanadaCarne.jpg", categoria: "empanada", description: "Empanadas con relleno de carne picada."},
-                    {id: "E2", title: "Empanada Jamón y Queso", price: 60, stock: 12, pictureURL: "assets/images/empanadaJyq.jpg", categoria: "empanada", description: "Empanadas con relleno de queso Muzzarela y jamón cocido."}
+                    {id: "P1", titulo: "Pizza Muzzarela", precio: 480, stock: 5, imagenURL: "/assets/images/pizzaMuzza.jpg", categoria: "pizza", descripcion:"Pizza con salsa de tomate, queso Muzzarela, orégano y aceitunas."},
+                    {id: "P2", titulo: "Pizza Napolitana", precio: 580, stock: 0, imagenURL: "/assets/images/pizzaNapo.jpg", categoria: "pizza", descripcion:"Pizza con salsa de tomate, queso Muzzarela, rodajas de tomate, ajo, orégano y aceitunas."},
+                    {id: "E1", titulo: "Empanada Carne", precio: 60, stock: 6, imagenURL: "/assets/images/empanadaCarne.jpg", categoria: "empanada", descripcion: "Empanadas con relleno de carne picada."},
+                    {id: "E2", titulo: "Empanada Jamón y Queso", precio: 60, stock: 12, imagenURL: "/assets/images/empanadaJyq.jpg", categoria: "empanada", descriction: "Empanadas con relleno de queso Muzzarela y jamón cocido."}
                 ]
 
-const getItemsArray = new Promise((res,rej) => {
-        setTimeout(()=>{
-            res(itemsArray)
-            rej("Error")
-        }, 2000)
-    })
+const db = getFirebase()
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([])
@@ -24,15 +20,15 @@ const ItemListContainer = () => {
 
     useEffect(()=>{
         if(idCategoria === undefined){
-            getItemsArray
-            .then(res => setItems(res))
+            db.collection('productos').get()
+            .then(res => setItems(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
             .catch(err => console.log("Se produjo un error", err))
             .finally(()=>{
                 setCargando(false)
             })
         }else{
-            getItemsArray
-            .then(res => setItems(res.filter(arr => arr.categoria === idCategoria)))
+            db.collection('productos').where('categoria', '==', idCategoria).get()
+            .then(res => setItems(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
             .catch(err => console.log("Se produjo un error", err))
             .finally(()=>{
                 setCargando(false)

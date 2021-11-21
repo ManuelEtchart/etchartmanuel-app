@@ -16,6 +16,10 @@ Este proyecto cuenta con una sola rama: main. En esta se ha ido desarrollando to
 
 Usamos esta librería para poder crear las distintas rutas de la página y así crear una navegabilidad óptima.
 
+### `firebase`
+
+Usamos esta librería para utilizar los servicios de Firebase y poder consumir nuestra base de datos.
+
 ## Demo
 
 Link: [Click aquí para Demo](https://angry-meninsky-2c7ded.netlify.app/)

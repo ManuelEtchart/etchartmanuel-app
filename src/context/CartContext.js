@@ -12,8 +12,8 @@ const CartContextProvider = ({children}) => {
         setCantAcumulada(cantAcumulada + cantidad)
         setPrecioTotal(precioTotal + (item.precio*item.cantidad))
 
-        if(listaCarrito.some(obj => obj.title === item.title)){
-            const itemExistente = listaCarrito.find(obj => obj.title === item.title)
+        if(listaCarrito.some(obj => obj.titulo === item.titulo)){
+            const itemExistente = listaCarrito.find(obj => obj.titulo === item.titulo)
 
             const nuevoItem = {...item, cantidad: itemExistente.cantidad + item.cantidad}
 
@@ -26,7 +26,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const eliminarProducto = (item) => {
-        setListaCarrito(listaCarrito.filter(obj => obj.title !== item.title))
+        setListaCarrito(listaCarrito.filter(obj => obj.titulo !== item.titulo))
         setCantAcumulada(cantAcumulada - item.cantidad)
         setPrecioTotal(precioTotal - (item.precio * item.cantidad))
     }

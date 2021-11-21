@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
-import { itemsArray } from "./ItemListContainer"
 import "./componentsCSS/ItemList-ItemDetailContainer.css"
+import { getFirebase } from "../services/getFirebase"
 
-const getItem = new Promise((res,rej) =>{
-        setTimeout(()=>{
-            res(itemsArray)
-            rej("Error")
-        }, 2000)
-    })
+const db = getFirebase()
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({})
@@ -19,15 +14,15 @@ const ItemDetailContainer = () => {
 
     useEffect(()=>{
         if(idDetalle === undefined){
-            getItem
-            .then( res => setItem(res))
+            db.collection('productos').get()
+            .then(res => setItem(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
             .catch(err => console.log("Error", err))
             .finally(()=>{
                 setCargando(false)
             })
         }else{
-            getItem
-            .then( res => setItem(res.find(arr => arr.id === idDetalle)))
+            db.collection('productos').doc(idDetalle).get()
+            .then( res => setItem({id: res.id, ...res.data()}))
             .catch(err => console.log("Error", err))
             .finally(()=>{
                 setCargando(false)

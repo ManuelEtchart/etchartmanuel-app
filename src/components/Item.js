@@ -5,8 +5,8 @@ const Item = ({item}) => {
 
     return(
         <div className="stlItemDiv">
-            <p>{item.title}</p>
-            <img src={item.pictureURL} className="stlImgItem" alt={item.title}/>
+            <p>{item.titulo}</p>
+            <img src={item.imagenURL} className="stlImgItem" alt={item.titulo}/>
             <p>Stock Disponible: {item.stock}</p>
             <Link to={`/detalle/${item.id}`}><button className="stlButton">Ver Detalle</button></Link>
         </div>

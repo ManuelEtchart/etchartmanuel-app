@@ -18,7 +18,7 @@ const Cart = () => {
     return(
             <>
                 {listaCarrito.map(prod => <div key={prod.id}>
-                                                <p>{prod.title}</p>
+                                                <p>{prod.titulo}</p>
                                                 <p>Cant: {prod.cantidad}</p>
                                                 <p>${prod.precio * prod.cantidad}</p>
                                                 <button onClick={()=>eliminarProducto(prod)} className="stlButton">Eliminar Producto</button> 

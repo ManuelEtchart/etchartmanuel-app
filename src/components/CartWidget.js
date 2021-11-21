@@ -1,4 +1,5 @@
 import cartIcon from '../assets/cartIcon.png';
+import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
@@ -14,7 +15,7 @@ const CartWidget = () => {
     
     return(
         <div style={stlCartWidget}>
-            <img src={cartIcon} alt="CartIcon" style={imgCart}/>
+            <Link to="/carrito"><img src={cartIcon} alt="CartIcon" style={imgCart}/></Link>
             <p style={{color: "#e71d36", display: 'inline'}}>{cantAcumulada}</p>
         </div>
        

@@ -12,19 +12,19 @@ const ItemDetail = ({item}) => {
 
     const onAdd = (cantSelec) => {
         setCantSeleccionada(cantSelec)
-        agregarAlCarrito({id: item.id, title: item.title, cantidad: cantSelec, precio: item.price}, cantSelec)
+        agregarAlCarrito({id: item.id, titulo: item.titulo, cantidad: cantSelec, precio: item.precio}, cantSelec)
         setGoCart("yes")
     }
 
     return(
         <div className="stlDetailDiv">
             <div>
-                <p>{item.title}</p>
-                <img src={item.pictureURL} className="stlImgDetail" alt={item.title}/>
+                <p>{item.titulo}</p>
+                <img src={item.imagenURL} className="stlImgDetail" alt={item.titulo}/>
             </div>
             <div className="stlDetailDescp">
-                <p className="stlPrice">${item.price}</p>
-                <p>{item.description}</p>
+                <p className="stlPrice">${item.precio}</p>
+                <p>{item.descripcion}</p>
                 {goCart === "no" ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd} /> : <Link to="/carrito"><button className="stlButtonCountGoCart">Terminar mi compra</button></Link>}
                 <Link to="/"><button className="stlButton">Volver</button></Link>
             </div>
