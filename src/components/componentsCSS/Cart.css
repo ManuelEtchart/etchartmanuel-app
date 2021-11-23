@@ -1,3 +1,22 @@
+.stlCarrito{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stlFormulario{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 100px;
+}
+
+.stlListaCarrito{
+    display: flex;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
 .stlButton{
     background-color: #e71d36;
     border-radius: 100px;
@@ -5,5 +24,5 @@
     border: solid black 1px;
     cursor: pointer;
     padding: 0px 10px;
-    margin: 5px 0px;
+    margin: 5px 5px;
 }

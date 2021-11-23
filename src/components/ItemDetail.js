@@ -5,13 +5,11 @@ import "./componentsCSS/Item-ItemDetail.css"
 import {CartContext} from "../context/CartContext"
 
 const ItemDetail = ({item}) => {
-    const [cantSeleccionada, setCantSeleccionada] = useState(0)
     const [goCart, setGoCart] = useState("no")
 
     const {agregarAlCarrito} = useContext(CartContext)
 
     const onAdd = (cantSelec) => {
-        setCantSeleccionada(cantSelec)
         agregarAlCarrito({id: item.id, titulo: item.titulo, cantidad: cantSelec, precio: item.precio}, cantSelec)
         setGoCart("yes")
     }
