@@ -23,7 +23,7 @@ Usamos esta librería para utilizar los servicios de Firebase y poder consumir n
 
 ## Instalación
 
-Situese en la dirección donde quiere ubicar el proyecto desde la consola y ejecute los siguientes comandos:
+Situese en la dirección donde quiere ubicar el proyecto desde la consola y ejecute los siguientes comandos uno a la vez:
 
 ~~~
 git clone https://github.com/ManuelEtchart/etchartmanuel-app.git
