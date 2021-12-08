@@ -2,7 +2,6 @@ import { createContext, useState } from "react"
 
 export const CartContext = createContext()
 
-
 const CartContextProvider = ({children}) => {
     const [listaCarrito, setListaCarrito] = useState([])
     const [cantAcumulada, setCantAcumulada] = useState(0)
@@ -37,20 +36,17 @@ const CartContextProvider = ({children}) => {
         setPrecioTotal(0)
     }
 
-
     return(
-        <>
-            <CartContext.Provider value={{
-                listaCarrito,
-                cantAcumulada,
-                precioTotal,
-                agregarAlCarrito,
-                eliminarProducto,
-                vaciarCarrito
-            }}>
-                {children}
-            </CartContext.Provider>
-        </>
+        <CartContext.Provider value={{
+            listaCarrito,
+            cantAcumulada,
+            precioTotal,
+            agregarAlCarrito,
+            eliminarProducto,
+            vaciarCarrito
+        }}>
+            {children}
+        </CartContext.Provider>
     )
 }
 

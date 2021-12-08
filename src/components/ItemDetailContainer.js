@@ -28,7 +28,6 @@ const ItemDetailContainer = () => {
                 setCargando(false)
             })
         }
-        
     },[idDetalle])
 
     let stlCargando 

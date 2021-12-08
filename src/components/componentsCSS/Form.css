@@ -1,14 +1,12 @@
-.stlCarrito{
+.stlFormulario{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 0px 100px;
+    margin-bottom: 164px;
 }
 
-.stlCarritoVacio{
-    padding-bottom: 394px;
-}
-
-.stlListaCarrito{
-    display: flex;
+input{
+    margin-bottom: 10px;
 }
 
 .stlButton{

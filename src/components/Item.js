@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import "./componentsCSS/Item-ItemDetail.css"
 
 const Item = ({item}) => {
-
     return(
         <div className="stlItemDiv">
             <p>{item.titulo}</p>
@@ -14,5 +13,3 @@ const Item = ({item}) => {
 }
 
 export default Item
-
-
